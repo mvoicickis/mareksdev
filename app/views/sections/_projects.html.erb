@@ -1,0 +1,18 @@
+<section id="projects" class="relative section-padding">
+  <div class="glow-orb left-1/2 top-0 h-64 w-64 -translate-x-1/2 bg-accent/10"></div>
+
+  <div class="relative mx-auto max-w-6xl">
+    <div class="reveal" data-reveal>
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="mt-3 max-w-2xl text-slate-400">
+        Real SaaS applications built with Ruby on Rails — the core of my work.
+      </p>
+    </div>
+
+    <div class="mt-12 grid gap-6 lg:grid-cols-2">
+      <% featured_projects.each do |project| %>
+        <%= render "sections/project_card", project: project %>
+      <% end %>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,43 @@
+<article class="glass card-lift flex h-full flex-col rounded-3xl p-6 sm:p-8 reveal" data-reveal>
+  <div class="flex flex-wrap items-center gap-3">
+    <h3 class="text-2xl font-bold tracking-tight text-white"><%= project[:name] %></h3>
+
+    <% if project[:status] == :live %>
+      <span class="inline-flex items-center gap-1.5 rounded-full border border-success/30 bg-success/10 px-3 py-1 text-xs font-semibold text-success">
+        <span class="h-1.5 w-1.5 rounded-full bg-success"></span>
+        <%= project[:status_label] %>
+      </span>
+    <% else %>
+      <span class="inline-flex items-center gap-1.5 rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-xs font-semibold text-amber-300">
+        <span aria-hidden="true">🚧</span>
+        <%= project[:status_label] %>
+      </span>
+    <% end %>
+  </div>
+
+  <p class="mt-4 flex-1 text-sm leading-relaxed text-slate-300 sm:text-base">
+    <%= project[:description] %>
+  </p>
+
+  <ul class="mt-6 flex flex-wrap gap-2" aria-label="Technologies">
+    <% project[:tech].each do |tech| %>
+      <li class="tech-chip"><%= tech %></li>
+    <% end %>
+  </ul>
+
+  <div class="mt-8 flex flex-wrap gap-3">
+    <% if project[:demo_url].present? %>
+      <a href="<%= project[:demo_url] %>" class="btn-primary" target="_blank" rel="noopener noreferrer">
+        Live Demo
+      </a>
+    <% else %>
+      <span class="inline-flex cursor-not-allowed items-center justify-center rounded-full border border-white/10 bg-white/5 px-5 py-2.5 text-sm font-semibold text-slate-400">
+        Coming Soon
+      </span>
+    <% end %>
+
+    <a href="<%= project[:github_url] %>" class="btn-secondary" target="_blank" rel="noopener noreferrer">
+      GitHub
+    </a>
+  </div>
+</article>

@@ -1,0 +1,53 @@
+<section id="home" class="relative overflow-hidden section-padding pt-32 sm:pt-36">
+  <div class="glow-orb -left-24 top-10 h-72 w-72 bg-accent/20"></div>
+  <div class="glow-orb right-0 top-40 h-80 w-80 bg-blue-400/10"></div>
+  <div class="hero-grid absolute inset-0"></div>
+
+  <div class="relative mx-auto max-w-6xl">
+    <div class="max-w-3xl reveal" data-reveal>
+      <p class="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-accent-soft">
+        <%= site_name %>
+      </p>
+
+      <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
+        Hi, I'm Mareks.
+      </h1>
+
+      <p class="mt-5 text-xl font-medium text-slate-200 sm:text-2xl">
+        Ruby on Rails Developer building practical SaaS applications.
+      </p>
+
+      <p class="mt-5 max-w-2xl text-base leading-relaxed text-slate-400 sm:text-lg">
+        I enjoy creating software that solves real-world problems through clean code, thoughtful design, and continuous learning.
+      </p>
+
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a href="#projects" class="btn-primary">View Projects</a>
+        <a href="<%= site_link(:github) %>" class="btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="<%= site_link(:linkedin) %>" class="btn-secondary" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="<%= site_link(:cv) %>" class="btn-ghost">Download CV</a>
+      </div>
+    </div>
+
+    <div class="relative mt-16 max-w-4xl reveal" data-reveal>
+      <div class="glass card-lift overflow-hidden rounded-3xl p-1">
+        <div class="rounded-[1.35rem] bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800 p-6 sm:p-8">
+          <div class="mb-4 flex items-center gap-2">
+            <span class="h-3 w-3 rounded-full bg-red-400/80"></span>
+            <span class="h-3 w-3 rounded-full bg-amber-400/80"></span>
+            <span class="h-3 w-3 rounded-full bg-success/80"></span>
+            <span class="ml-3 font-mono text-xs text-slate-500">lifepoints.app</span>
+          </div>
+          <pre class="overflow-x-auto font-mono text-sm leading-relaxed text-slate-300"><code><span class="text-accent-soft">class</span> <span class="text-white">Application</span> <span class="text-accent-soft">&#60;</span> <span class="text-white">Rails::Application</span>
+  <span class="text-slate-500"># Practical SaaS, built with care</span>
+  config.load_defaults <span class="text-emerald-400">8.0</span>
+<span class="text-accent-soft">end</span>
+
+<span class="text-slate-500"># MareksDev — shipping real products</span>
+user.habits.track!
+progress.better_than_yesterday?</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
