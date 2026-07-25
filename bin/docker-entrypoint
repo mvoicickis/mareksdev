@@ -1,8 +1,6 @@
 #!/bin/bash -e
 
-# If running the rails server then create or migrate existing database
-if [ "${@: -2:1}" == "./bin/rails" ] && [ "${@: -1:1}" == "server" ]; then
-  ./bin/rails db:prepare
-fi
+# Database-free landing page: no db:prepare on container start.
+# Render / Docker can boot without DATABASE_URL or PostgreSQL.
 
 exec "${@}"
