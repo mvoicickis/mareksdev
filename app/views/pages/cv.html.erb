@@ -1,0 +1,91 @@
+<% content_for :title, "CV | #{cv_profile[:name]} | #{site_name}" %>
+<% content_for :meta_description, "Curriculum Vitae — #{cv_profile[:name]}, #{cv_profile[:title]}." %>
+
+<section class="section-padding pt-28 sm:pt-32">
+  <div class="mx-auto max-w-3xl">
+    <div class="mb-8 flex flex-wrap items-center justify-between gap-3 print:hidden">
+      <a href="<%= root_path %>" class="btn-ghost">&larr; Back to portfolio</a>
+      <button type="button" class="btn-primary" onclick="window.print()">
+        Download / Print PDF
+      </button>
+    </div>
+
+    <article class="glass rounded-3xl p-6 sm:p-10 print:border-0 print:bg-white print:p-0 print:text-black print:shadow-none">
+      <header class="border-b border-white/10 pb-6 print:border-slate-300">
+        <h1 class="text-3xl font-extrabold tracking-tight text-white print:text-black sm:text-4xl">
+          <%= cv_profile[:name] %>
+        </h1>
+        <p class="mt-2 text-lg font-medium text-accent-soft print:text-slate-700">
+          — <%= cv_profile[:title] %> —
+        </p>
+        <p class="mt-4 max-w-2xl text-sm leading-relaxed text-slate-300 print:text-slate-700 sm:text-base">
+          <%= cv_profile[:summary] %>
+        </p>
+        <p class="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-sm text-slate-400 print:text-slate-600">
+          <a href="tel:<%= cv_profile[:phone].delete(' ') %>" class="hover:text-white print:text-slate-600"><%= cv_profile[:phone] %></a>
+          <a href="mailto:<%= cv_profile[:email] %>" class="hover:text-white print:text-slate-600"><%= cv_profile[:email] %></a>
+          <span><%= cv_profile[:location] %></span>
+        </p>
+      </header>
+
+      <section class="mt-8">
+        <h2 class="text-sm font-bold uppercase tracking-[0.2em] text-accent-soft print:text-slate-800">Skills</h2>
+        <ul class="mt-4 flex flex-wrap gap-2">
+          <% cv_profile[:skills].each do |skill| %>
+            <li class="tech-chip print:border-slate-300 print:bg-slate-100 print:text-slate-800"><%= skill %></li>
+          <% end %>
+        </ul>
+      </section>
+
+      <section class="mt-10">
+        <h2 class="text-sm font-bold uppercase tracking-[0.2em] text-accent-soft print:text-slate-800">Experience</h2>
+        <div class="mt-6 space-y-8">
+          <% cv_profile[:experience].each do |job| %>
+            <div>
+              <h3 class="text-lg font-semibold text-white print:text-black"><%= job[:role] %></h3>
+              <p class="mt-1 text-sm text-slate-300 print:text-slate-700">
+                <%= job[:company] %>
+                <% if job[:location].present? %>
+                  — <%= job[:location] %>
+                <% end %>
+              </p>
+              <p class="mt-1 text-xs font-medium text-slate-500 print:text-slate-500"><%= job[:dates] %></p>
+              <ul class="mt-3 space-y-1.5 text-sm text-slate-300 print:text-slate-700">
+                <% job[:highlights].each do |item| %>
+                  <li class="flex gap-2">
+                    <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent print:bg-slate-500"></span>
+                    <span><%= item %></span>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+        </div>
+      </section>
+
+      <section class="mt-10">
+        <h2 class="text-sm font-bold uppercase tracking-[0.2em] text-accent-soft print:text-slate-800">Education</h2>
+        <ul class="mt-4 space-y-4">
+          <% cv_profile[:education].each do |item| %>
+            <li>
+              <p class="font-semibold text-white print:text-black"><%= item[:title] %></p>
+              <p class="text-sm text-slate-400 print:text-slate-600"><%= item[:place] %> · <%= item[:year] %></p>
+            </li>
+          <% end %>
+        </ul>
+      </section>
+
+      <section class="mt-10">
+        <h2 class="text-sm font-bold uppercase tracking-[0.2em] text-accent-soft print:text-slate-800">Achievements</h2>
+        <ul class="mt-4 space-y-4">
+          <% cv_profile[:achievements].each do |item| %>
+            <li>
+              <p class="font-semibold text-white print:text-black"><%= item[:title] %></p>
+              <p class="text-sm text-slate-400 print:text-slate-600"><%= item[:place] %> · <%= item[:year] %></p>
+            </li>
+          <% end %>
+        </ul>
+      </section>
+    </article>
+  </div>
+</section>

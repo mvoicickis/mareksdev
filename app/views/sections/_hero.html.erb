@@ -5,6 +5,16 @@
 
   <div class="relative mx-auto max-w-6xl">
     <div class="max-w-3xl reveal" data-reveal>
+      <img
+        src="<%= site_avatar_url %>"
+        alt="Mareks Voicickis"
+        width="176"
+        height="176"
+        class="mb-8 h-40 w-40 rounded-full border-2 border-accent/40 object-cover shadow-lg shadow-accent/20 ring-4 ring-white/5 sm:h-44 sm:w-44"
+        loading="eager"
+        decoding="async"
+      >
+
       <p class="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-accent-soft">
         <%= site_name %>
       </p>
@@ -25,7 +35,7 @@
         <a href="#projects" class="btn-primary">View Projects</a>
         <a href="<%= site_link(:github) %>" class="btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="<%= site_link(:linkedin) %>" class="btn-secondary" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="<%= site_link(:cv) %>" class="btn-ghost">Download CV</a>
+        <a href="<%= site_link(:cv) %>" class="btn-ghost" target="_blank" rel="noopener noreferrer">Download CV</a>
       </div>
     </div>
 
@@ -36,7 +46,7 @@
             <span class="h-3 w-3 rounded-full bg-red-400/80"></span>
             <span class="h-3 w-3 rounded-full bg-amber-400/80"></span>
             <span class="h-3 w-3 rounded-full bg-success/80"></span>
-            <span class="ml-3 font-mono text-xs text-slate-500">lifepoints.app</span>
+            <span class="ml-3 font-mono text-xs text-slate-500">lifepoints.onrender.com</span>
           </div>
           <pre class="overflow-x-auto font-mono text-sm leading-relaxed text-slate-300"><code><span class="text-accent-soft">class</span> <span class="text-white">Application</span> <span class="text-accent-soft">&#60;</span> <span class="text-white">Rails::Application</span>
   <span class="text-slate-500"># Practical SaaS, built with care</span>
